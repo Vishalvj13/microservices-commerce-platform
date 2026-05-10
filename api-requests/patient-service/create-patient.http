@@ -3,8 +3,8 @@ POST http://localhost:4000/patients
 Content-Type: application/json
 
 {
-  "name": "Vinay B",
-  "email": "vj1@gmail.com",
+  "name": "Vilas V",
+  "email": "vj2@gmail.com",
   "address": "India",
   "dateOfBirth": "1992-09-09",
   "registeredDate": "2024-11-28"

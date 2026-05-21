@@ -13,6 +13,7 @@ spring:
                 - Path=/api/patients/**
               filters:
                 - StripPrefix=1
+                - JwtValidation
 
             - id: api-docs-patient-route
               uri: http://patient-service:4000
@@ -20,6 +21,16 @@ spring:
                 - Path=/api-docs/patients
               filters:
                 - RewritePath=/api-docs/patients,/v3/api-docs
+
+            ## http://localhost:4004/auth/login
+            ## API GATEWAY → http://auth-service:4005/login
+
+            - id: auth-service-root
+              uri: http://auth-service:4005
+              predicates:
+                - Path=/auth/**
+              filters:
+                - StripPrefix=1
 
 
 
